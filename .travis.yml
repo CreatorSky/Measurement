@@ -22,3 +22,11 @@ before_deploy:
   - cd ..
   - zip -r app.ipa Payload
   - popd
+deploy:
+  provider: releases
+  api_key:
+    secure: "ST86h8ykD6HzHm1SGIfB86YToFr7Y07LHJE2OgqNergDoEQO/HG+jwiINBtETLKhFFHGY1stMSAnD9V0G7gyUa+gIu4S3vZyQF1oT+YEbMOzhpXxV1zEp2H92mCeM/XNCblfRBpSbasw4trCytblIO9PUOHpxM4KUlDe96whVeRwAFaOfwbBf7aV+Apgqwo19Xy4WfR6KTaac6bySubj3J/BDPjLXG8LfI9p9Uq9oFzqYuHmcB+klTajZGZ/NgThilQgp0qED888ylrDgynv07k1PgOlIoc8i4OjkOhETSxM9D6cX9L6wLJfsbkQDenPr5xtpFfQOX/gQLC3p5jXCxHG/XOu9FLacUKQWzWIp/GcEuyPm3LaSJq0ox7+cZIIBiwTKF8bnN0iuNp/62iXef28COE58w0XXrjk5pd5Lvvhx8z1S9uqQT0EOnT/aj/n8pNq5C9gjvs9gYfK8HIYJ72zJTPa++bd3rZ+i3LeFKVAkRFbcILaQTVT+MADTxzvScEczl6T8conEmJOAjpq3UglKQksc1dSqfYe26Qt+Pb51RNiZRwLoFEUEMKLcY4LxBZks3xLTDke12466B1EdmjG6TFQBrIMA2qWOCLehMjKgwuQmRnB9DCi8zFGzRj/f9HsLbujopphZqMO1+Dz/3f4/PYqXrn5An2mN03abys="
+  file: build/ios/iphoneos/app.ipa
+  skip_cleanup: true #important or your built app would be deleted
+  on:
+    repo: CreatorSky/Measurement
